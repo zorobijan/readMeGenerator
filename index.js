@@ -1,34 +1,42 @@
-// TODO: Include packages needed for this application
 const fs = require("fs")
 const { getSystemErrorMap } = require('util');
 const inquirer = require('inquirer');
-// TODO: Create an array of questions for user input
-// let repositoryName = "example"
-// let description = "description"
-// let tableOfContents = "table of contents"
-// let Installation = "installation"
-// let Usage = "usage"
-// let License = license
-// let Contributing = "contributing"
-// let Tests = "tests"
-// let Questions = "questions"
 
 let parameters = process.argv.slice(2);
 
 let readMeText = (answers) => {
-  let readMe = `${response.repositoryName}
+  let readMe = `## Project Name
+  ${answers.repositoryName}
 
+## Description
 ${answers.description}
+
+## Table of Contents
+* installation
+* usage
+* contributing
+* tests
+* questions
 
 ${answers.tableOfContents}
 
+## Installation
+
 ${answers.installation}
+
+## Usage
 
 ${answers.usage}
 
+## Contributing
+
 ${answers.contributing}
 
+## Tests
+
 ${answers.tests}
+
+## Questions
 
 ${answers.questions}`
   return readMe
@@ -43,7 +51,7 @@ inquirer
     },
     {
       type: 'input',
-      message: 'Enter Description',
+      message: 'Describe the program',
       name: 'description',
     },
     {
@@ -53,17 +61,17 @@ inquirer
     },
     {
       type: 'input',
-      message: 'Enter Installation',
+      message: 'What does the user need to install to use your program?',
       name: 'installation',
     },
     {
       type: 'input',
-      message: 'Enter Usage',
+      message: 'How does one use this program?',
       name: 'usage',
     },
     {
       type: 'input',
-      message: 'Enter Contributing',
+      message: 'Who contributed to this program?',
       name: 'contributing',
     },
     {
