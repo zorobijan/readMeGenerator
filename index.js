@@ -1,6 +1,8 @@
 const fs = require("fs")
 const { getSystemErrorMap } = require('util');
 const inquirer = require('inquirer');
+const { default: Choice } = require("inquirer/lib/objects/choice");
+const { default: Choices } = require("inquirer/lib/objects/choices");
 
 let parameters = process.argv.slice(2);
 
@@ -12,17 +14,19 @@ let readMeText = (answers) => {
 ${answers.description}
 
 ## Table of Contents
-* installation
-* usage
-* contributing
-* tests
-* questions
-
-${answers.tableOfContents}
+* [installation](#installation)
+* [licenses](#licenses)
+* [usage](#usage)
+* [contributing](#contributing)
+* [tests](#tests)
+* [contactInfo](#contactInfo)
 
 ## Installation
 
 ${answers.installation}
+
+## Licenses
+${answers.licenses}
 
 ## Usage
 
@@ -36,14 +40,16 @@ ${answers.contributing}
 
 ${answers.tests}
 
-## Questions
+## Contact Info
 
-${answers.questions}`
+* ${answers.email}
+
+* ${answers.github}`
   return readMe
 }
 
 inquirer
-.prompt([
+  .prompt([
     {
       type: 'input',
       message: 'Enter Repository Name',
@@ -56,14 +62,15 @@ inquirer
     },
     {
       type: 'input',
-      message: 'Enter Table of Content',
-      name: 'tableOfContents',
-    },
-    {
-      type: 'input',
       message: 'What does the user need to install to use your program?',
       name: 'installation',
     },
+    {
+      type: 'list'
+      message: 'please select which licenses were needed for this project'
+      name: 'licenses'
+      choices: ['IBM', 'BSD', 'CCO', 'IBM']
+    }
     {
       type: 'input',
       message: 'How does one use this program?',
@@ -81,82 +88,20 @@ inquirer
     },
     {
       type: 'input',
-      message: 'Enter Questions',
-      name: 'questions',
+      message: 'Enter email address',
+      name: 'email',
+    },
+    {
+      type: 'input',
+      message: 'Enter github repository url',
+      name: 'github',
     },
   ])
   .then((answers) => {
     console.log(answers)
-
     fs.writeFile('generatedReadMe.md', readMeText(answers), (err) =>
-  err ? console.error(err) : console.log('Commit logged!')
-);
+      err ? console.error(err) : console.log('Check the explorer for your new readMe')
+    );
   }
 
-);
-
-
-
-// fs.appendFile('log.txt', `${process.argv[3]}\n`, (err) =>
-//   err ? console.error(err) : console.log('Commit logged!')
-// );
-
-// fs.appendFile('log.txt', `${process.argv[4]}\n`, (err) =>
-//   err ? console.error(err) : console.log('Commit logged!')
-// );
-
-// fs.appendFile('log.txt', `${process.argv[5]}\n`, (err) =>
-//   err ? console.error(err) : console.log('Commit logged!')
-// );
-
-// fs.appendFile('log.txt', `${process.argv[6]}\n`, (err) =>
-//   err ? console.error(err) : console.log('Commit logged!')
-// );
-
-// fs.appendFile('log.txt', `${process.argv[7]}\n`, (err) =>
-//   err ? console.error(err) : console.log('Commit logged!')
-// );
-
-// fs.appendFile('log.txt', `${process.argv[8]}\n`, (err) =>
-//   err ? console.error(err) : console.log('Commit logged!')
-// );
-
-// fs.appendFile('log.txt', `${process.argv[9]}\n`, (err) =>
-//   err ? console.error(err) : console.log('Commit logged!')
-// );
-
-// // function generateBadgeForLicense(){
-// //     if(License === MIT)
-// //     return [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-// //     else if(License === BSD)
-// //     return [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-
-// //     if(License === CCO)
-// //     return [![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
-
-// //     if(License === IBM)
-// //     return [![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)
-// // }
-// let readMeText = 
-
-
-
-
-
-// # $(repositoryName)
-
-// ## Description
-
-// ###Table of Contents
-
-// const questions = [];
-
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
+  );
