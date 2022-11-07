@@ -66,11 +66,11 @@ inquirer
       name: 'installation',
     },
     {
-      type: 'list'
-      message: 'please select which licenses were needed for this project'
-      name: 'licenses'
+      type: 'list',
+      message: 'please select which licenses were needed for this project',
+      name: 'licenses',
       choices: ['IBM', 'BSD', 'CCO', 'IBM']
-    }
+    },
     {
       type: 'input',
       message: 'How does one use this program?',
