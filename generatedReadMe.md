@@ -1,8 +1,7 @@
 ## Project Name
-  weatherApp
-
+Social Network
 ## Description
-Use the weatherApp to retrieve weather data for cities.
+This program is a backend for a social network.
 
 ## Table of Contents
 * [installation](#installation)
@@ -21,18 +20,20 @@ IBM
 
 ## Usage
 
-type in the name of a city into the search bar and click 'search'. the app will display relevant weather information for that day.
+use insomnia in order to attempt get/post/update
 
 ## Contributing
 
-Matthew Bascom
+matthew bascom
 
 ## Tests
 
-none
+
 
 ## Contact Info
 
 * matt.bijan@gmail.com
 
-* https://github.com/zorobijan/weatherapp
+* https://github.com/zorobijan/eCommerceBackEnd
+
+* screencastify: https://app.castify.com/view/96679b1b-9511-4f85-b2f8-1ea582676283
