@@ -1,8 +1,7 @@
 ## Project Name
-  saveGame
-
+Social Network
 ## Description
-saveGame is an ecommerce website that provides the user with a generated list of popular video games with the lowest price available in the United States.
+This program is a backend for a social network.
 
 ## Table of Contents
 * [installation](#installation)
@@ -14,18 +13,18 @@ saveGame is an ecommerce website that provides the user with a generated list of
 
 ## Installation
 
-
+n/a
 
 ## Licenses
 IBM
 
 ## Usage
 
-visit the website, select a category of game that you're interested in, view the selection, and add to cart if you wish to purchase. For more information on the game, simply click the title and you will be taken to another page with a description of the game.
+use insomnia in order to attempt get/post/update
 
 ## Contributing
 
-Matthew Bascom, Dondre Peltier, and Monique Ramirez
+matthew bascom
 
 ## Tests
 
@@ -35,4 +34,6 @@ Matthew Bascom, Dondre Peltier, and Monique Ramirez
 
 * matt.bijan@gmail.com
 
-* https://github.com/zorobijan/Save-Game
+* https://github.com/zorobijan/eCommerceBackEnd
+
+* screencastify: https://app.castify.com/view/96679b1b-9511-4f85-b2f8-1ea582676283
